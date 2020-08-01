@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import { combineReducers } from "redux";
+import authReducer from "./authReducer";
+import errorReducer from "./errorReducer";
+
+export default combineReducers({
+  auth: authReducer,
+  errors: errorReducer
+});
 
 ReactDOM.render(
   <React.StrictMode>
