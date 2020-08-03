@@ -1,9 +1,8 @@
 import axios from "axios";
 
-export default axios.create({
-  baseURL: "http://localhost:1337/api/challenges",
-  responseType: "json"
-});
+export default axios.get(
+  "http://localhost:1337/api/challenges"
+ );
 // import setAuthToken from "../utils/setAuthToken";
 // import jwt_decode from "jwt-decode";
 // import {

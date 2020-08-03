@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import { Link } from "react-router-dom";
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -13,13 +14,22 @@ return (
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
-            <h4>
+            <h2>
               <b>Hey there,</b> {user.username}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
-              </p>
-            </h4>
+            </h2>
+              <h1 className="flow-text grey-text text-darken-1">
+                Please choose an option below
+              </h1>
+                <div>Create a Challenge</div>
+                <div>
+                  <Link to="/challenges">
+                    View Existing Challenges
+                  </Link>
+                </div>
+                <div>Inbox</div>
+                <Link to="/charities">
+                  <div>Charities we work with</div>
+                </Link>
             <button
               style={{
                 width: "150px",
