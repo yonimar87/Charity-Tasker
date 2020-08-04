@@ -48,7 +48,7 @@ class ChallengeList extends Component {
                     <li>{c.goal}</li>
                     <li>{c.shortDescription}</li>
                 </ul>
-                <input type="checkbox" />
+                <input type="checkbox" checked={c.checked ? true : false}/>
                 </>
                 )}
             </div>
