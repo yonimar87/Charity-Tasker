@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import { getChallenges } from '../../utils/challengesAPI'
+import { getChallenges } from '../../utils/challengesAPI';
+import { Link } from "react-router-dom";
+
 class ChallengeList extends Component {
     constructor() {
         super();
@@ -38,15 +40,17 @@ class ChallengeList extends Component {
         const { user } = this.props.auth;
         return (
             <div>
-                <h1>Challenge below</h1>
+                <h1>Challenges below</h1>
                 {this.state.challenges.map(c => 
                 <>
                 <ul>
+                  <Link to="/challenge_${c._id}">
                     <li>{c.name}</li>
-                    <li>{c._id}</li>
-                    <li>{c.catagory}</li>
-                    <li>{c.goal}</li>
-                    <li>{c.shortDescription}</li>
+                  </Link>
+                  <li>{c._id}</li>
+                  <li>{c.category}</li>
+                  <li>{c.goal}</li>
+                  <li>{c.shortDescription}</li>
                 </ul>
                 <input type="checkbox" checked={c.checked ? true : false}/>
                 </>

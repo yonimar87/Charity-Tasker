@@ -13,8 +13,10 @@ import PrivateRoute from "./private-route/PrivateRoute";
 import Dashboard from "./dashboard/Dashboard";
 import Challenges from "./challenges/challenges"
 import Charities from "./charities/charities"
+import Category from "./challenges/category"
 import Footer from "./layout/Footer"
 import createChallenge from "./challenges/challengeNew"
+import singleChallenge from "./challenges/challenge"
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -44,10 +46,12 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/charities" component={Charities} />
+            <Route exact path="/category" component={Category} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/challenges" component={Challenges} />
               <PrivateRoute exact path="/create_challenge" component={createChallenge} />
+              <PrivateRoute exact path="/challenge_${c._id}" component={singleChallenge} />
             </Switch>
             <Footer />
           </div>
