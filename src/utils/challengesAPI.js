@@ -1,8 +1,18 @@
 import axios from "axios";
 
-export default axios.get(
-  "http://localhost:1337/api/challenges"
- );
+export const sendChallenge = (challengeInput) => {
+  console.log(challengeInput);
+  return axios
+     .post(
+       "/api/challenges", challengeInput)
+};
+
+export const getChallenges = () => {
+  return axios
+    .get(
+    "http://localhost:1337/api/challenges"
+  )};
+
 // import setAuthToken from "../utils/setAuthToken";
 // import jwt_decode from "jwt-decode";
 // import {

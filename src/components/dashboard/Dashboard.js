@@ -20,7 +20,11 @@ return (
               <h1 className="flow-text grey-text text-darken-1">
                 Please choose an option below
               </h1>
-                <div>Create a Challenge</div>
+                <div>
+                  <Link to="/create_challenge">
+                  Create a Challenge
+                  </Link>
+                  </div>
                 <div>
                   <Link to="/challenges">
                     View Existing Challenges

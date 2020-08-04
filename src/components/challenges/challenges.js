@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import Challenge from '../../utils/challengesAPI'
+import { getChallenges } from '../../utils/challengesAPI'
 class ChallengeList extends Component {
     constructor() {
         super();
@@ -32,7 +32,7 @@ class ChallengeList extends Component {
     };
 
     componentDidMount() {
-        Challenge.then(res => this.setState({challenges: res.data}))
+        getChallenges().then(res => this.setState({challenges: res.data}))
     }
     render() {
         const { user } = this.props.auth;
@@ -40,6 +40,7 @@ class ChallengeList extends Component {
             <div>
                 <h1>Challenge below</h1>
                 {this.state.challenges.map(c => 
+                <>
                 <ul>
                     <li>{c.name}</li>
                     <li>{c._id}</li>
@@ -47,6 +48,8 @@ class ChallengeList extends Component {
                     <li>{c.goal}</li>
                     <li>{c.shortDescription}</li>
                 </ul>
+                <input type="checkbox" />
+                </>
                 )}
             </div>
         );
