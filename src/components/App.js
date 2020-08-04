@@ -5,7 +5,7 @@ import setAuthToken from "../utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../actions/authActions";
 import { Provider } from "react-redux";
 import store from "../store";
-// import Navbar from "./layout/Navbar";
+import Navbar from "./layout/Navbar";
 import Landing from "./layout/Landing";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
@@ -17,6 +17,8 @@ import Category from "./challenges/category"
 import Footer from "./layout/Footer"
 import createChallenge from "./challenges/challengeNew"
 import singleChallenge from "./challenges/challenge"
+import MyCreatedChallenge from "./challenges/createdchallenges"
+import PickedChallenges from "./challenges/pickedchallenges"
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -41,7 +43,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            {/* <Navbar /> */}
+            <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
@@ -51,7 +53,9 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/challenges" component={Challenges} />
               <PrivateRoute exact path="/create_challenge" component={createChallenge} />
-              <PrivateRoute exact path="/challenge_${c._id}" component={singleChallenge} />
+              <PrivateRoute exact path="/challenge" component={singleChallenge} />
+              <PrivateRoute exact path="/mycreatedchallenges" component={MyCreatedChallenge} />
+              <PrivateRoute exact path="/pickedchallenges" component={PickedChallenges} />
             </Switch>
             <Footer />
           </div>

@@ -30,7 +30,16 @@ return (
                     View Existing Challenges
                   </Link>
                 </div>
-                <div>Inbox</div>
+                <div>
+                  <Link to="/mycreatedchallenges">
+                    Created Challenges
+                  </Link>
+                  </div>
+                <div>
+                  <Link to="/pickedchallenges">
+                    Picked challenges
+                  </Link>
+                  </div>
                 <Link to="/charities">
                   <div>Charities we work with</div>
                 </Link>

@@ -2,15 +2,45 @@ import axios from "axios";
 
 export const sendChallenge = (challengeInput) => {
   console.log(challengeInput);
+  
   return axios
      .post(
        "/api/challenges", challengeInput)
-};
+  };
+
+export const pickChallenge = (challenge_id, auth) => {
+  console.log(challenge_id); 
+  console.log(auth);
+  const body = {challenge_id, user_id: auth.user.id}
+  return axios
+     .put(
+       "/api/challenges", body)
+  };
 
 export const getChallenges = () => {
   return axios
     .get(
     "http://localhost:1337/api/challenges"
+  )};
+
+export const getCreatedChallenges = (auth) => {
+  const id = auth.user.id
+  return axios
+    .get(
+    `http://localhost:1337/api/challenges?creator_id=${id}`
+  )};
+
+export const getPickedChallenges = (auth) => {
+  const id = auth.user.id
+  return axios
+    .get(
+    `http://localhost:1337/api/challenges?fulfilledBy_id=${id}`
+  )};
+
+  export const getChallenge = (id) => {
+  return axios
+    .get(
+    `http://localhost:1337/api/challenges/${id}`
   )};
 
 // import setAuthToken from "../utils/setAuthToken";

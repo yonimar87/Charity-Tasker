@@ -33,7 +33,9 @@ class createChallenge extends Component {
       description: this.state.description,
       name: this.state.name,
       shortDescription: this.state.shortDescription,
-      goal: this.state.goal
+      goal: this.state.goal,
+      // token: localStorage.getItem("jwtToken")
+      creator_id: this.props.auth.user.id
     }).then(this.setState({ redirect: "/dashboard" }))
   }
 

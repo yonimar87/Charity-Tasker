@@ -2,31 +2,16 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import { getChallenges } from '../../utils/challengesAPI';
+import { getCreatedChallenges } from '../../utils/challengesAPI';
 import { Link } from "react-router-dom";
 
-class ChallengeList extends Component {
+class MyChallengeList extends Component {
     constructor() {
         super();
         this.state = {
-            challenges: []
+            challenge: []
         }
     }
-    
-   /* <div>
-    <h1>Challenge below</h1>
-    {this.state.challenges.map(c => 
-    <Card style={{ width: '18rem' }}>
-    <Card.Body>
-      <Card.Title>{c.catagory}</Card.Title>
-      <Card.Subtitle className="mb-2 text-muted">{c.goal}</Card.Subtitle>
-      <Card.Text>
-        {c.shortDescription}
-      </Card.Text>
-      <Card.Link href="#">Click here for more info..</Card.Link>
-    </Card.Body>
-  </Card>
-  )}</div>*/
 
     onLogoutClick = e => {
       e.preventDefault();
@@ -34,14 +19,14 @@ class ChallengeList extends Component {
     };
 
     componentDidMount() {
-        getChallenges().then(res => this.setState({challenges: res.data}))
+        getCreatedChallenges(this.props.auth).then(res => this.setState({challenge: res.data}))
     }
     render() {
         const { user } = this.props.auth;
         return (
             <div>
                 <h1>Challenges below</h1>
-                {this.state.challenges.map(c => 
+                {this.state.challenge.map(c => 
                 <>
                 <ul>
                   <Link to={{
@@ -64,7 +49,7 @@ class ChallengeList extends Component {
         );
     }
   }
-  ChallengeList.propTypes = {
+  MyChallengeList.propTypes = {
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
   };
@@ -74,4 +59,4 @@ class ChallengeList extends Component {
   export default connect(
     mapStateToProps,
     { logoutUser }
-  )(ChallengeList);
+  )(MyChallengeList);
