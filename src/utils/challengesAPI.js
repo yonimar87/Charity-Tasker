@@ -23,6 +23,27 @@ export const getChallenges = () => {
     "http://localhost:1337/api/challenges"
   )};
 
+export const updateLikes = (challengeId, newLikesCount) => {
+    const updatedValue = {
+      likes: newLikesCount
+    }
+      return updateChallenge(challengeId, updatedValue)
+  };
+
+export const updateStatus = (challengeId, newStatus) => {
+    const updatedValue = {
+      status: newStatus
+    }
+      return updateChallenge(challengeId, updatedValue)
+  };
+
+export const updateChallenge = (challengeId, updatedValue) => {
+  return axios
+    .patch(
+    `http://localhost:1337/api/challenges/${challengeId}`, 
+    updatedValue
+  )};
+
 export const getCreatedChallenges = (auth) => {
   const id = auth.user.id
   return axios

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import { getChallenge, pickChallenge } from "../../utils/challengesAPI";
+import { getChallenge, pickChallenge, updateLikes, updateStatus } from "../../utils/challengesAPI";
 import Upload from "./upload.js";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ class singleChallenge extends Component {
     super(props);
     this.state = {
       challenge: [true],
-      count: 0,
+      fulfilledBy_id: false
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -39,11 +39,23 @@ class singleChallenge extends Component {
   }
 
   incrementMe = () => {
-    let newCount = this.state.count + 1;
+    const challenges = this.state.challenge.slice(0)
+    challenges[0].likes += 1;
     this.setState({
-      count: newCount,
+      challenges: challenges
     });
+    updateLikes(this.state.challenge[0]._id, challenges[0].likes)
   };
+
+  challengeComplete = () => {
+    const challenges = this.state.challenge.slice(0)
+    challenges[0].status = "Completed";
+    this.setState({
+      challenges: challenges
+    });
+    updateStatus(this.state.challenge[0]._id, challenges[0].status)
+  };
+  
 
   render() {
     if (this.state.challenge.length === 0) {
@@ -51,20 +63,40 @@ class singleChallenge extends Component {
     }
     const { user } = this.props.auth;
     return (
-      <div>
-        {this.state.challenge[0]._id}
-        {this.state.challenge[0].name}
-        {this.state.challenge[0].description}
-        {this.state.challenge[0].shortDescription}
-        {this.state.challenge[0].category}
-        {this.state.challenge[0].likes}
+      <div className="container">
+        <h3>Challenge Title: {this.state.challenge[0].name}</h3>
+        <ul>
+          <li className="singleChallengeList">Category
+            <br></br> 
+            {this.state.challenge[0].category}
+          </li>
+          <li className="singleChallengeList">Short Description
+            <br></br>
+           {this.state.challenge[0].shortDescription}
+           </li>
+          <li className="singleChallengeList">Description
+            <br></br>
+            {this.state.challenge[0].description}
+            </li>
+          <li className="singleChallengeList">Likes
+            <br></br>
+            {this.state.challenge[0].likes}
+            </li>
+          <li className="singleChallengeList">Fulfilled By
+            <br></br>
+            {this.state.challenge[0].fulfilledBy_id}
+            </li>
         <Link to="/pickedchallenges">
-          <button onClick={this.handleClick}>
+          <button className="dragon" onClick={this.handleClick}>
             Click here to pick the challenge for yourself
           </button>
         </Link>
-        <button onClick={this.incrementMe}>Likes: {this.state.count} </button>
+        <button className="dragon" onClick={this.challengeComplete}>
+            Mark as Complete {this.state.challenge[0].status}
+          </button>
+        <button className="dragon" onClick={this.incrementMe}>Likes: {this.state.challenge[0].likes} </button>
         <Upload />
+        </ul>
       </div>
     );
   }

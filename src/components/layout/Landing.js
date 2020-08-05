@@ -6,14 +6,12 @@ class Landing extends Component {
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
-            <h4>
-              <b>Build</b> a login/auth app with the{" "}
-              <span style={{ fontFamily: "monospace" }}>MERN</span> stack from
-              scratch
-            </h4>
+            <h1>
+              <b>Charity Tasker</b> 
+            </h1>
+            <h4>A MERN App created as a Non-For Profit platform</h4>
             <p className="flow-text grey-text text-darken-1">
-              Create a (minimal) full-stack app with user authentication via
-              passport and JWTs
+              Log in and create your own challenges for other users to complete. A donation goal is attached to each challenge. Once the goal is met, the challenge must be completed or the user who chose to complete it has to donate!
             </p>
             <br />
             <div className="col s6">

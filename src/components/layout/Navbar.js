@@ -7,6 +7,12 @@ class Navbar extends Component {
         <nav>
           <div>
             <Link
+              to="/dashboard">
+              Dashboard
+            </Link>
+          </div>
+          <div>
+            <Link
               to="/login">
               Login
             </Link>

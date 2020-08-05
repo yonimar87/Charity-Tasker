@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-
+import Charities from "../charities/charities.js"
 class Footer extends Component {
     render() {
         return (
-            <h1>this is the footer</h1>
+            <div>
+            <Charities />
+            </div>
         )
     }
 }
