@@ -45,13 +45,14 @@ class createChallenge extends Component {
     return (
       <div className="container">
         <h1>Create a new challenge</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+        <form onSubmit={this.handleSubmit} className="login">
+          <div className="form-group">
+            <label>
             Pick the type of challenge to be completed
             <select
-              className="form"
               onChange={this.handleChange}
               name="category"
+              className="form-control"
             >
               <option value="Food">Food</option>
               <option value="Adventure">Adventure</option>
@@ -59,22 +60,29 @@ class createChallenge extends Component {
               <option value="Personal">Personal</option>
             </select>
           </label>
+          </div>
           <br></br>
+          <div className="form-group">
           <label>
             Name:
-            <input type="text" name="name" onChange={this.handleChange} />
+            <input type="text" name="name" onChange={this.handleChange} className="form-control"/>
           </label>
+          </div>
           <br></br>
+          <div className="form-group">
           <label>
-            Long Description
-            <textarea name="description" onChange={this.handleChange} />
+            Description
+            <textarea name="description" onChange={this.handleChange} className="form-control" />
           </label>
+          </div>
           <br></br>
+          <div className="form-group">
           <label>
-            Goal:
-            <input type="integer" name="goal" onChange={this.handleChange} />
+            Likes Goal:
+            <input type="integer" name="goal" onChange={this.handleChange} className="form-control"/>
           </label>
-          <input type="submit" value="Submit" onSubmit={this.handleSubmit} />
+          </div>
+          <input type="submit" value="Submit" onSubmit={this.handleSubmit} className="form-control"/>
         </form>
       </div>
     );

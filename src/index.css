@@ -62,3 +62,8 @@ form {
   text-align: center justify;
   padding: 10%;
 }
+
+.login{
+  max-width: 500px;
+  margin: auto;
+}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import { Form, Row, Col } from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Login extends Component {
   constructor() {
@@ -46,7 +46,6 @@ render() {
     const { errors } = this.state;
 return (
           <div className="container">
-          <div className="col s8 offset-s2" >
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Login</b> below
@@ -55,24 +54,26 @@ return (
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>
-            <form noValidate onSubmit={this.onSubmit} className="formEmail">
-              <div className="input-field col s12 div1" >
+            <form noValidate onSubmit={this.onSubmit} className="login">
+              <div className="form-group" >
               <label htmlFor="email">Email:
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
+                  className="form-control"
                   id="email"
                   type="email"
                 />
                 </label>
               </div>
-              <div className="input-field col s12 div1">
+              <div className="form-group">
                  <label htmlFor="password">Password:
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
+                  className="form-control"
                   id="password"
                   type="password"
                 />
@@ -95,7 +96,6 @@ return (
                 </button>
               </div>
             </form>
-          </div>
       </div>
     );
   }

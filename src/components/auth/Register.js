@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { registerUser } from "../../actions/authActions";
-import className from "classnames";
+import { registerUser, loginUser } from "../../actions/authActions";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import className from "classnames"
 class Register extends Component {
   constructor() {
     super();
@@ -43,13 +44,17 @@ onSubmit = e => {
     password: this.state.password,
     password2: this.state.password2
   };
-  this.props.registerUser(newUser, this.props.history); 
+  // const userData = {
+  //   email: this.state.email,
+  //   password: this.state.password
+  // };
+  this.props.registerUser(newUser, this.props.history)
+  // this.props.loginUser(userData, this.props.history) 
   };
 render() {
     const { errors } = this.state;
 return (
       <div className="container">
-          <div className="col s8 offset-s2">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Register</b> below
@@ -58,8 +63,8 @@ return (
                 Already have an account? <Link to="/login">Log in</Link>
               </p>
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+            <form noValidate onSubmit={this.onSubmit} className="login">
+              <div className="form-group">
               <label htmlFor="username">Username
                 <input
                   onChange={this.onChange}
@@ -67,14 +72,12 @@ return (
                   error={errors.username}
                   id="username"
                   type="text"
-                  className={className("", {
-                    invalid: errors.username
-                  })}
+                  className="form-control"
                 />
                 </label>
                 <span className="red-text">{errors.username}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group">
                 <label htmlFor="name">Name
                 <input
                   onChange={this.onChange}
@@ -82,54 +85,46 @@ return (
                   error={errors.name}
                   id="name"
                   type="text"
-                  className={className("", {
-                    invalid: errors.name
-                  })}
+                  className="form-control"
                 />
                 </label>
                 <span className="red-text">{errors.name}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group">
                 <label htmlFor="email">Email
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
+                  className="form-control"
                   type="email"
-                  className={className("", {
-                    invalid: errors.email
-                  })}
                 />
                 </label>
                 <span className="red-text">{errors.email}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group">
                 <label htmlFor="password">Password
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
+                  className="form-control"
                   id="password"
                   type="password"
-                  className={className("", {
-                    invalid: errors.password
-                  })}
                 />
                 </label>
                 <span className="red-text">{errors.password}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group">
                 <label htmlFor="password2">Confirm Password
                 <input
                   onChange={this.onChange}
                   value={this.state.password2}
                   error={errors.password2}
+                  className="form-control"
                   id="password2"
                   type="password"
-                  className={className("", {
-                    invalid: errors.password2
-                  })}
                 />
                 </label>
                 <span className="red-text">{errors.password2}</span>
@@ -151,7 +146,6 @@ return (
                 </button>
               </div>
             </form>
-          </div>
       </div>
     );
   }
