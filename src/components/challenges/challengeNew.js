@@ -56,7 +56,7 @@ class createChallenge extends Component {
               <option value="Food">Food</option>
               <option value="Adventure">Adventure</option>
               <option value="Video">Video</option>
-              <option value="Dragon">Dragon</option>
+              <option value="Personal">Personal</option>
             </select>
           </label>
           <br></br>

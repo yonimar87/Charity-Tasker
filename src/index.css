@@ -1,4 +1,4 @@
-.dragon {
+.greenButton {
   background-color: #223623;
   border: none;
   color: white;
@@ -61,12 +61,4 @@ li {
 form {
   text-align: center justify;
   padding: 10%;
-}
-
-#formEmail {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }

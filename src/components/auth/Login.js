@@ -55,8 +55,8 @@ return (
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>
-            <form noValidate onSubmit={this.onSubmit} id="formEmail">
-              <div className="input-field col s12"  >
+            <form noValidate onSubmit={this.onSubmit} className="formEmail">
+              <div className="input-field col s12 div1" >
               <label htmlFor="email">Email:
                 <input
                   onChange={this.onChange}
@@ -67,7 +67,7 @@ return (
                 />
                 </label>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field col s12 div1">
                  <label htmlFor="password">Password:
                 <input
                   onChange={this.onChange}

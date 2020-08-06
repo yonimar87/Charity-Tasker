@@ -89,14 +89,14 @@ class singleChallenge extends Component {
             <Card.Text>{this.state.challenge[0].fulfilledBy_id}</Card.Text> 
             </li>
           <Link to="/pickedchallenges">
-          <button className="dragon" onClick={this.handleClick}>
+          <button className="greenButton" onClick={this.handleClick}>
             Click here to pick the challenge for yourself
           </button>
          </Link>
 
-         <button className="dragon" onClick={this.incrementMe}>Likes: {this.state.challenge[0].likes} </button>
+         <button className="greenButton" onClick={this.incrementMe}>Likes: {this.state.challenge[0].likes} </button>
          <Upload />
-          <button className="dragon" onClick={this.challengeComplete}>
+          <button className="greenButton" onClick={this.challengeComplete}>
             Status: {this.state.challenge[0].status}
           </button>
           </Card>
