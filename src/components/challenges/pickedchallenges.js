@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getPickedChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 
 class PickedChallengeList extends Component {
   constructor() {
@@ -25,30 +26,33 @@ class PickedChallengeList extends Component {
     );
   }
   render() {
-    // const { user } = this.props.auth;
+    const { user } = this.props.auth;
     return (
       <div>
         <h1>CHALLENGES TO COMPLETE</h1>
         {this.state.challenges.map((c) => (
           <>
             <ul>
-              <Link
-                to={{
-                  pathname: `/challenge`,
-                  state: {
-                    _id: c._id,
-                  },
-                }}
-              >
-                <li>{c.name}</li>
-              </Link>
-              <li>{c.category}</li>
-              <li>Goal: {c.goal} likes</li>
-              <li>{c.shortDescription}</li>
-              <li>{c.description}</li>
-              <li>Current Likes: {c.likes}</li>
-              <li> {c.fulfilledBy_id ? 'Challenge already completed!' : 'Still needs completing....'}
-            </li>
+              <Card>
+               <Card.Header as="h4">
+                <Link
+                  to={{
+                    pathname: `/challenge`,
+                    state: {
+                      _id: c._id,
+                    },
+                  }}
+                >
+                  <li>{c.name}</li>
+                </Link>
+                </Card.Header>
+                <Card.Text><li>Category: {c.category}</li>
+                <li>Goal: {c.goal} likes</li>
+                <li>{c.shortDescription}</li>
+                <li>{c.description}</li>
+                <li>Current Likes: {c.likes}</li></Card.Text>
+                <li> <Card.Header as="h5">{c.fulfilledBy_id ? 'Challenge already completed!' : 'Still needs completing....'}</Card.Header></li>
+              </Card>
             </ul>
           </>
         ))}

@@ -11,14 +11,16 @@ import Register from "./auth/Register";
 import Login from "./auth/Login";
 import PrivateRoute from "./private-route/PrivateRoute";
 import Dashboard from "./dashboard/Dashboard";
-import Challenges from "./challenges/challenges"
-import Charities from "./charities/charities"
-import Category from "./challenges/category"
-import Footer from "./layout/Footer"
-import createChallenge from "./challenges/challengeNew"
-import singleChallenge from "./challenges/challenge"
-import MyCreatedChallenge from "./challenges/createdchallenges"
-import PickedChallenges from "./challenges/pickedchallenges"
+import Challenges from "./challenges/challenges";
+import Charities from "./charities/charities";
+import Category from "./challenges/category";
+import Footer from "./layout/Footer";
+import createChallenge from "./challenges/challengeNew";
+import singleChallenge from "./challenges/challenge";
+import MyCreatedChallenge from "./challenges/createdchallenges";
+import PickedChallenges from "./challenges/pickedchallenges";
+import {Jumbotron} from "react-bootstrap";
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -42,8 +44,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="container">
-            <row>
+          <Jumbotron className="container">
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
@@ -59,8 +60,7 @@ class App extends Component {
               <PrivateRoute exact path="/pickedchallenges" component={PickedChallenges} />
             </Switch>
             <Footer />
-            </row>
-          </div>
+          </Jumbotron>
         </Router>
       </Provider>
     );

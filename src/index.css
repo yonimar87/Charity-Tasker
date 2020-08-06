@@ -12,13 +12,22 @@
 
 .container {
   margin:0 auto;      
-  width: 70%; 
-  /* border: 1px solid #000000; */
+  width: 100%; 
   text-align: center;
+  background-color: #B6CA91;
+}
+
+#Navbar {
+  background-color: #223623;
 }
 
 li {
   list-style: none;
+}
+
+.col { 
+  padding-left: 5px !important;; 
+  padding-right: 5px !important;; 
 }
 
 .singleChallengeList {
@@ -43,4 +52,13 @@ li {
 
 #footer {
   align-items: stretch;
+}
+
+.card-headed {
+  background-color: #FCE205
+}
+
+form {
+  text-align: center justify;
+  padding: 10%;
 }

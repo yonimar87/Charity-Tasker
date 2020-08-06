@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Card, Button} from "react-bootstrap";
+import {Card, Button, Container, Col, Row} from "react-bootstrap";
 
 class Charities extends Component {
 
@@ -19,7 +19,9 @@ class Charities extends Component {
         return (
             <div>
                 <h1>Below are the 4 charities we work with</h1>
-                <div id="charities">
+                <Container>
+                <Row>
+                    <Col>
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src="https://www.rspca.org.au/sites/all/themes/rspca/logo.png"/>
                 <Card.Body>
@@ -32,7 +34,9 @@ class Charities extends Component {
                     <a href="https://www.rspca.org.au/about-us"><Button variant="primary">RSPCA Website</Button></a>
                 </Card.Body>
                 </Card>
+                </Col>
 
+                <Col>
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src="https://streetsmartaustralia.org/wp-content/uploads/2014/10/StreetSmart-Logo-landscape-black-80h.png" />
                 <Card.Body>
@@ -45,7 +49,9 @@ class Charities extends Component {
                     <a href="https://streetsmartaustralia.org/"><Button variant="primary">StreetSmart</Button></a>
                 </Card.Body>
                 </Card>
+                </Col>
 
+                <Col>
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src="https://www.rmhc.org.au/sites/default/files/2019-05/RMHC_GWSyd_main_whitetext.png" />
                 <Card.Body>
@@ -58,7 +64,9 @@ class Charities extends Component {
                     <a href="https://www.rmhc.org.au/our-chapters/rmhc-greater-western-sydney"><Button variant="primary">Ronald McDonald</Button></a>
                 </Card.Body>
                 </Card>
+                </Col>
 
+                <Col>
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src="https://starlight.org.au/themes/stl/images/logo.png" />
                 <Card.Body>
@@ -71,7 +79,9 @@ class Charities extends Component {
                     <a href="https://www.rspca.org.au/about-us"><Button variant="primary">Startlight</Button></a>
                 </Card.Body>
                 </Card>
-                </div>
+                </Col>
+                </Row>
+                </Container>
             </div>
         )         
     } 

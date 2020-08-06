@@ -12,25 +12,20 @@ class NavbarBlue extends Component {
   };
 
   render() {
+    const { user } = this.props.auth;
+    console.log(user)
     return (
-      <div>
-        <Navbar bg="primary" variant="dark">
+      <div className="container">
+        <Navbar id="Navbar" variant="primary">
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
-                <hr></hr>
-              <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-              <Nav.Link
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Logout
-            </Nav.Link>
+              {user.id ? 
+              <><Nav.Link onClick={this.onLogoutClick}> Logout </Nav.Link> 
+              <Nav.Link href="/dashboard">Dashboard</Nav.Link></>
+              : 
+              <><Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/register">Register</Nav.Link></>
+              }
             </Nav>
           </Navbar>    
       </div>

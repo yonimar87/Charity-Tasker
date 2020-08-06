@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import Charities from "../charities/charities.js"
+import Charities from "../charities/charities.js";
+import {Container} from "react-bootstrap";
+
 class Footer extends Component {
     render() {
         return (
-            <div id="footer">
+            <Container>
             <Charities />
-            </div>
+            </Container>
         )
     }
 }

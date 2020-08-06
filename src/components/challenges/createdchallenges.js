@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getCreatedChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 
 class MyChallengeList extends Component {
   constructor() {
@@ -23,6 +24,7 @@ class MyChallengeList extends Component {
       this.setState({ challenge: res.data })
     );
   }
+
   render() {
     // const { user } = this.props.auth;
     return (
@@ -31,6 +33,8 @@ class MyChallengeList extends Component {
         {this.state.challenge.map((c) => (
           <>
             <ul>
+              <Card>
+              <Card.Header as="h4">
               <Link
                 to={{
                   pathname: `/challenge`,
@@ -41,12 +45,16 @@ class MyChallengeList extends Component {
               >
                 <li>{c.name}</li>
               </Link>
-              <li>{c._id}</li>
-              <li>{c.category}</li>
-              <li>{c.goal}</li>
-              <li>{c.shortDescription}</li>
+              </Card.Header>
+              <Card.Text>
+              <li></li>
+              <li>Category: {c.category}</li>
+              <li>Goal: {c.goal} Likes</li>
+              <li>Current Likes: {c.likes}</li>
+              <li>Description: {c.shortDescription}</li>
+              </Card.Text>
+              </Card>
             </ul>
-            <input type="checkbox" checked={c.checked ? true : false} />
           </>
         ))}
       </div>

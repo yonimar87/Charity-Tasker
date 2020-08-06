@@ -5,6 +5,7 @@ import { logoutUser } from "../../actions/authActions";
 import { getChallenge, pickChallenge, updateLikes, updateStatus } from "../../utils/challengesAPI";
 import Upload from "./upload.js";
 import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 
 class singleChallenge extends Component {
   constructor(props) {
@@ -66,37 +67,40 @@ class singleChallenge extends Component {
       <div className="container">
         <h3>Challenge Title: {this.state.challenge[0].name}</h3>
         <ul>
-          <li className="singleChallengeList">Category
+          <Card>
+          <li className="singleChallengeList"><Card.Header>Category</Card.Header>
             <br></br> 
-            {this.state.challenge[0].category}
+           <Card.Text>{this.state.challenge[0].category}</Card.Text> 
           </li>
-          <li className="singleChallengeList">Short Description
+          <li className="singleChallengeList"><Card.Header>Short Description</Card.Header>
             <br></br>
-           {this.state.challenge[0].shortDescription}
+            <Card.Text>{this.state.challenge[0].shortDescription}</Card.Text> 
            </li>
-          <li className="singleChallengeList">Description
+          <li className="singleChallengeList"><Card.Header>Description</Card.Header>
             <br></br>
-            {this.state.challenge[0].description}
+            <Card.Text>{this.state.challenge[0].description}</Card.Text> 
             </li>
-          <li className="singleChallengeList">Likes
+          <li className="singleChallengeList"><Card.Header>Likes</Card.Header>
             <br></br>
-            {this.state.challenge[0].likes}
+            <Card.Text> {this.state.challenge[0].likes}</Card.Text> 
             </li>
-          <li className="singleChallengeList">Fulfilled By
+          <li className="singleChallengeList"><Card.Header>Fulfilled By</Card.Header>
             <br></br>
-            {this.state.challenge[0].fulfilledBy_id}
+            <Card.Text>{this.state.challenge[0].fulfilledBy_id}</Card.Text> 
             </li>
-        <Link to="/pickedchallenges">
+          <Link to="/pickedchallenges">
           <button className="dragon" onClick={this.handleClick}>
             Click here to pick the challenge for yourself
           </button>
-        </Link>
+         </Link>
 
-        <button className="dragon" onClick={this.incrementMe}>Likes: {this.state.challenge[0].likes} </button>
-        <Upload />
-        <button className="dragon" onClick={this.challengeComplete}>
+         <button className="dragon" onClick={this.incrementMe}>Likes: {this.state.challenge[0].likes} </button>
+         <Upload />
+          <button className="dragon" onClick={this.challengeComplete}>
             Status: {this.state.challenge[0].status}
           </button>
+          </Card>
+
         </ul>
       </div>
     );

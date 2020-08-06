@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {Button} from "react-bootstrap";
+
 class Landing extends Component {
   render() {
     return (
@@ -24,7 +26,9 @@ class Landing extends Component {
                 }}
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
+                <Button variant="warning">
                 Register
+                </Button>
               </Link>
             </div>
             <div className="col s6">
@@ -37,9 +41,13 @@ class Landing extends Component {
                 }}
                 className="btn btn-large btn-flat waves-effect white black-text"
               >
+                <Button variant="warning">
                 Log In
+                </Button>
               </Link>
             </div>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XI8l61-xCOU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>

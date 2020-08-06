@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
 import { getChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
 import {Card, Button} from "react-bootstrap";
@@ -31,8 +28,8 @@ class ChallengeList extends Component {
         <h1>Challenges below</h1>
         {this.state.challenges.map((c) => (
           <>
-            <ul>
-            <Card>
+            <ul >
+            <Card variant="warning">
               <Card.Header as="h4">{c.shortDescription}</Card.Header>
               <Card.Body>
                 <Card.Title>           
@@ -61,11 +58,5 @@ class ChallengeList extends Component {
     );
   }
 }
-ChallengeList.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-};
-const mapStateToProps = (state) => ({
-  auth: state.auth,
-});
-export default connect(mapStateToProps, { logoutUser })(ChallengeList);
+
+export default ChallengeList;

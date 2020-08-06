@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import className from "classnames";
+import { Form, Row, Col } from "react-bootstrap"
+
 class Login extends Component {
   constructor() {
     super();
@@ -44,13 +45,8 @@ this.props.loginUser(userData); // since we handle the redirect within our compo
 render() {
     const { errors } = this.state;
 return (
-      <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
+          <div className="container">
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Login</b> below
@@ -61,38 +57,26 @@ return (
             </div>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
+              <label htmlFor="email">Email:
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
                   type="email"
-                  className={className("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
                 />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
-                </span>
+                </label>
               </div>
               <div className="input-field col s12">
+                 <label htmlFor="password">Password:
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
                   type="password"
-                  className={className("", {
-                    invalid: errors.password || errors.passwordincorrect
-                  })}
                 />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">
-                  {errors.password}
-                  {errors.passwordincorrect}
-                </span>
+                 </label>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
@@ -100,7 +84,9 @@ return (
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
-                    marginTop: "1rem"
+                    marginTop: "1rem",
+                    backgroundColor: "#223623",
+                    color: "white"
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
@@ -110,7 +96,6 @@ return (
               </div>
             </form>
           </div>
-        </div>
       </div>
     );
   }
