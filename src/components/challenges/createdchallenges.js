@@ -34,25 +34,25 @@ class MyChallengeList extends Component {
           <>
             <ul>
               <Card>
-              <Card.Header as="h4">
-              <Link
-                to={{
-                  pathname: `/challenge`,
-                  state: {
-                    _id: c._id,
-                  },
-                }}
-              >
-                <li>{c.name}</li>
-              </Link>
-              </Card.Header>
-              <Card.Text>
-              <li></li>
-              <li>Category: {c.category}</li>
-              <li>Goal: {c.goal} Likes</li>
-              <li>Current Likes: {c.likes}</li>
-              <li>Description: {c.shortDescription}</li>
-              </Card.Text>
+                <Card.Header as="h4">
+                  <Link
+                    to={{
+                      pathname: `/challenge`,
+                      state: {
+                        _id: c._id,
+                      },
+                    }}
+                  >
+                    <li>{c.name}</li>
+                  </Link>
+                </Card.Header>
+                <Card.Text>
+                  <li></li>
+                  <li>Category: {c.category}</li>
+                  <li>Goal: {c.goal} Likes</li>
+                  <li>Current Likes: {c.likes}</li>
+                  <li>Description: {c.shortDescription}</li>
+                </Card.Text>
               </Card>
             </ul>
           </>

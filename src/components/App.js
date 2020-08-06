@@ -19,7 +19,7 @@ import createChallenge from "./challenges/challengeNew";
 import singleChallenge from "./challenges/challenge";
 import MyCreatedChallenge from "./challenges/createdchallenges";
 import PickedChallenges from "./challenges/pickedchallenges";
-import {Jumbotron} from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -30,7 +30,7 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Jumbotron className="container">
+          <div className="container">
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
@@ -54,13 +54,29 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/challenges" component={Challenges} />
-              <PrivateRoute exact path="/create_challenge" component={createChallenge} />
-              <PrivateRoute exact path="/challenge" component={singleChallenge} />
-              <PrivateRoute exact path="/mycreatedchallenges" component={MyCreatedChallenge} />
-              <PrivateRoute exact path="/pickedchallenges" component={PickedChallenges} />
+              <PrivateRoute
+                exact
+                path="/create_challenge"
+                component={createChallenge}
+              />
+              <PrivateRoute
+                exact
+                path="/challenge"
+                component={singleChallenge}
+              />
+              <PrivateRoute
+                exact
+                path="/mycreatedchallenges"
+                component={MyCreatedChallenge}
+              />
+              <PrivateRoute
+                exact
+                path="/pickedchallenges"
+                component={PickedChallenges}
+              />
             </Switch>
             <Footer />
-          </Jumbotron>
+          </div>
         </Router>
       </Provider>
     );

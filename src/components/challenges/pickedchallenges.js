@@ -12,7 +12,6 @@ class PickedChallengeList extends Component {
     this.state = {
       challenges: [],
     };
-
   }
 
   onLogoutClick = (e) => {
@@ -34,24 +33,33 @@ class PickedChallengeList extends Component {
           <>
             <ul>
               <Card>
-               <Card.Header as="h4">
-                <Link
-                  to={{
-                    pathname: `/challenge`,
-                    state: {
-                      _id: c._id,
-                    },
-                  }}
-                >
-                  <li>{c.name}</li>
-                </Link>
+                <Card.Header as="h4">
+                  <Link
+                    to={{
+                      pathname: `/challenge`,
+                      state: {
+                        _id: c._id,
+                      },
+                    }}
+                  >
+                    <li>{c.name}</li>
+                  </Link>
                 </Card.Header>
-                <Card.Text><li>Category: {c.category}</li>
-                <li>Goal: {c.goal} likes</li>
-                <li>{c.shortDescription}</li>
-                <li>{c.description}</li>
-                <li>Current Likes: {c.likes}</li></Card.Text>
-                <li> <Card.Header as="h5">{c.fulfilledBy_id ? 'Challenge already completed!' : 'Still needs completing....'}</Card.Header></li>
+                <Card.Text>
+                  <li>Category: {c.category}</li>
+                  <li>Goal: {c.goal} likes</li>
+                  <li>{c.shortDescription}</li>
+                  <li>{c.description}</li>
+                  <li>Current Likes: {c.likes}</li>
+                </Card.Text>
+                <li>
+                  {" "}
+                  <Card.Header as="h5">
+                    {c.fulfilledBy_id
+                      ? "Challenge already completed!"
+                      : "Still needs completing...."}
+                  </Card.Header>
+                </li>
               </Card>
             </ul>
           </>

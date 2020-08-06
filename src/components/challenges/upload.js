@@ -41,7 +41,7 @@ export default function Upload() {
     <div>
       <h3>Upload</h3>
       <form onSubmit={handleSubmitFile}>
-        <input 
+        <input
           className="upload"
           id="chooseFile"
           type="file"
@@ -49,7 +49,10 @@ export default function Upload() {
           onChange={handleFileInputChange}
           value={fileInputState}
         />
-        <button className="upload" type="submit"> Submit </button>
+        <button className="upload" type="submit">
+          {" "}
+          Submit{" "}
+        </button>
       </form>
       {previewSource && (
         <img src={previewSource} alt="chosen" style={{ height: "200px" }} />

@@ -1,3 +1,10 @@
+.container {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  background-color: #b6ca91;
+}
+
 .greenButton {
   background-color: #223623;
   border: none;
@@ -10,13 +17,6 @@
   cursor: pointer;
 }
 
-.container {
-  margin:0 auto;      
-  width: 100%; 
-  text-align: center;
-  background-color: #B6CA91;
-}
-
 #Navbar {
   background-color: #223623;
 }
@@ -25,9 +25,9 @@ li {
   list-style: none;
 }
 
-.col { 
-  padding-left: 5px !important;; 
-  padding-right: 5px !important;; 
+.col {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
 }
 
 .singleChallengeList {
@@ -55,7 +55,7 @@ li {
 }
 
 .card-headed {
-  background-color: #FCE205
+  background-color: #fce205;
 }
 
 form {
@@ -63,7 +63,11 @@ form {
   padding: 10%;
 }
 
-.login{
+.login {
   max-width: 500px;
   margin: auto;
+}
+
+.center {
+  background-color: pink;
 }

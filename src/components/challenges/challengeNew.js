@@ -48,41 +48,60 @@ class createChallenge extends Component {
         <form onSubmit={this.handleSubmit} className="login">
           <div className="form-group">
             <label>
-            Pick the type of challenge to be completed
-            <select
-              onChange={this.handleChange}
-              name="category"
-              className="form-control"
-            >
-              <option value="Food">Food</option>
-              <option value="Adventure">Adventure</option>
-              <option value="Video">Video</option>
-              <option value="Personal">Personal</option>
-            </select>
-          </label>
+              Pick the type of challenge to be completed
+              <select
+                onChange={this.handleChange}
+                name="category"
+                className="form-control"
+              >
+                <option value="Food">Food</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Video">Video</option>
+                <option value="Personal">Personal</option>
+              </select>
+            </label>
           </div>
           <br></br>
           <div className="form-group">
-          <label>
-            Name:
-            <input type="text" name="name" onChange={this.handleChange} className="form-control"/>
-          </label>
+            <label>
+              Name:
+              <input
+                type="text"
+                name="name"
+                onChange={this.handleChange}
+                className="form-control"
+              />
+            </label>
           </div>
           <br></br>
           <div className="form-group">
-          <label>
-            Description
-            <textarea name="description" onChange={this.handleChange} className="form-control" />
-          </label>
+            <label>
+              Description
+              <textarea
+                name="description"
+                onChange={this.handleChange}
+                className="form-control"
+              />
+            </label>
           </div>
           <br></br>
           <div className="form-group">
-          <label>
-            Likes Goal:
-            <input type="integer" name="goal" onChange={this.handleChange} className="form-control"/>
-          </label>
+            <label>
+              Likes Goal:
+              <input
+                type="integer"
+                name="goal"
+                onChange={this.handleChange}
+                className="form-control"
+              />
+            </label>
           </div>
-          <input type="submit" value="Submit" onSubmit={this.handleSubmit} className="form-control"/>
+          <input
+            type="submit"
+            value="Submit"
+            onSubmit={this.handleSubmit}
+            className="form-control"
+          />
         </form>
       </div>
     );
