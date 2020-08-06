@@ -61,7 +61,7 @@ class singleChallenge extends Component {
     if (this.state.challenge.length === 0) {
       return null;
     }
-    const { user } = this.props.auth;
+    // const { user } = this.props.auth;
     return (
       <div className="container">
         <h3>Challenge Title: {this.state.challenge[0].name}</h3>
@@ -91,11 +91,12 @@ class singleChallenge extends Component {
             Click here to pick the challenge for yourself
           </button>
         </Link>
-        <button className="dragon" onClick={this.challengeComplete}>
-            Mark as Complete {this.state.challenge[0].status}
-          </button>
+
         <button className="dragon" onClick={this.incrementMe}>Likes: {this.state.challenge[0].likes} </button>
         <Upload />
+        <button className="dragon" onClick={this.challengeComplete}>
+            Status: {this.state.challenge[0].status}
+          </button>
         </ul>
       </div>
     );

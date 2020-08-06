@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import {Card, Button} from "react-bootstrap"
+import {Card, Button} from "react-bootstrap";
 
 class Charities extends Component {
 
@@ -8,10 +7,10 @@ class Charities extends Component {
     super()
 
     this.state = {
-        charityDesc1: "Yawl mizzen galleon heave down swing the lead grog blossom lee snow Buccaneer black jack. No prey, no pay ho barque reef sails red ensign hands dead men tell no tales mizzen me schooner. Pieces of Eight Davy Jones' Locker warp handsomely yard hulk crimp lateen sail provost spyglass.",
-        charityDesc2: "Dead men tell no tales chantey gangway skysail Corsair bilge rat spirits grog gun jack. Wench gally fire in the hole spyglass ballast fire ship me gunwalls boom salmagundi. Blimey reef walk the plank Cat o'nine tails no prey, no pay Jolly Roger run a shot across the bow piracy wench handsomely.",
-        charityDesc3: "Cheesecake halloumi cow. Cheeseburger st. agur blue cheese port-salut camembert de normandie mascarpone cheese and biscuits camembert de normandie stilton. Airedale queso danish fontina cheese triangles danish fontina halloumi cauliflower cheese bocconcini. Ricotta port-salut paneer fondue say cheese manchego.",
-        charityDesc4: "Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. ",
+        charityDesc1: "The RSPCA is an independent, community-based charity providing animal care and protection services across the country.",
+        charityDesc2: "The aim of founding StreetSmart was to simultaneously break down inaccurate prejudices about homelessness, raise vital funds for important smaller, local organisations and strengthen them through collaboration and connecting them to their community.",
+        charityDesc3: "The very first Ronald McDonald House in Australia opened in Camperdown, near the Children’s Hospital in 1981. In 1995, RMHC Charities Greater Western Sydney (GWS) relocated the House to Westmead, to continue providing vital services to families after the hospital had relocated to Western Sydney. Today, our Westmead House provides a safe place to stay for around 1,360 families per year..",
+        charityDesc4: "Starlight's mission is To brighten the lives of seriously ill children and their families .Because sick kids are still kids at heart... ",
         maxLength: 80
         };
     }
@@ -22,54 +21,54 @@ class Charities extends Component {
                 <h1>Below are the 4 charities we work with</h1>
                 <div id="charities">
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://www.fillmurray.com/200/200" />
+                <Card.Img variant="top" src="https://www.rspca.org.au/sites/all/themes/rspca/logo.png"/>
                 <Card.Body>
-                    <Card.Title className="cardTitle">Pirate this.state.charity</Card.Title>
+                    <Card.Title className="cardTitle">For the Animal Lovers</Card.Title>
                     <Card.Text>
                         { ((this.state.charityDesc1).length > this.state.maxLength) ? 
                         (((this.state.charityDesc1).substring(0,this.state.maxLength-3)) + '...') : 
                         this.state.charityDesc1 }
                     </Card.Text>
-                    <Button variant="primary">Piiiirates</Button>
+                    <a href="https://www.rspca.org.au/about-us"><Button variant="primary">RSPCA Website</Button></a>
                 </Card.Body>
                 </Card>
 
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://www.fillmurray.com/200/201" />
+                <Card.Img variant="top" src="https://streetsmartaustralia.org/wp-content/uploads/2014/10/StreetSmart-Logo-landscape-black-80h.png" />
                 <Card.Body>
-                    <Card.Title className="cardTitle">More Pirate this.state.charity</Card.Title>
+                    <Card.Title className="cardTitle">Help those in need</Card.Title>
                     <Card.Text>
                     { ((this.state.charityDesc2).length > this.state.maxLength) ? 
                         (((this.state.charityDesc2).substring(0,this.state.maxLength-3)) + '...') : 
                         this.state.charityDesc2 }
                     </Card.Text>
-                    <Button variant="primary">We love pirates</Button>
+                    <a href="https://streetsmartaustralia.org/"><Button variant="primary">StreetSmart</Button></a>
                 </Card.Body>
                 </Card>
 
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://www.fillmurray.com/210/200" />
+                <Card.Img variant="top" src="https://www.rmhc.org.au/sites/default/files/2019-05/RMHC_GWSyd_main_whitetext.png" />
                 <Card.Body>
-                    <Card.Title className="cardTitle">Cheese this.state.charity</Card.Title>
+                    <Card.Title className="cardTitle">To you hungry kids</Card.Title>
                     <Card.Text>
                     { ((this.state.charityDesc3).length > this.state.maxLength) ? 
                         (((this.state.charityDesc3).substring(0,this.state.maxLength-3)) + '...') : 
                         this.state.charityDesc3 }
                     </Card.Text>
-                    <Button variant="primary">Where is my cheese?</Button>
+                    <a href="https://www.rmhc.org.au/our-chapters/rmhc-greater-western-sydney"><Button variant="primary">Ronald McDonald</Button></a>
                 </Card.Body>
                 </Card>
 
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://www.fillmurray.com/205/200" />
+                <Card.Img variant="top" src="https://starlight.org.au/themes/stl/images/logo.png" />
                 <Card.Body>
-                    <Card.Title className="cardTitle">Zombie this.state.charity</Card.Title>
+                    <Card.Title className="cardTitle">Starlight - Children in Need</Card.Title>
                     <Card.Text >
                     { ((this.state.charityDesc4).length > this.state.maxLength) ? 
                         (((this.state.charityDesc4).substring(0,this.state.maxLength-3)) + '...') : 
                         this.state.charityDesc4 }
                     </Card.Text>
-                    <Button variant="primary">Click for Brains</Button>
+                    <a href="https://www.rspca.org.au/about-us"><Button variant="primary">Startlight</Button></a>
                 </Card.Body>
                 </Card>
                 </div>

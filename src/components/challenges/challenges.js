@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
+import {Card, Button} from "react-bootstrap";
 
 class ChallengeList extends Component {
   constructor() {
@@ -22,27 +23,37 @@ class ChallengeList extends Component {
     getChallenges().then((res) => this.setState({ challenges: res.data }));
   }
   render() {
-    const { user } = this.props.auth;
+
+
+    // const { user } = this.props.auth;
     return (
       <div>
         <h1>Challenges below</h1>
         {this.state.challenges.map((c) => (
           <>
             <ul>
-              <Link
-                to={{
-                  pathname: `/challenge`,
-                  state: {
-                    _id: c._id,
-                  },
-                }}
-              >
-                <li>{c.name}</li>
-              </Link>
-              <li>{c._id}</li>
-              <li>{c.category}</li>
-              <li>{c.goal}</li>
-              <li>{c.shortDescription}</li>
+            <Card>
+              <Card.Header as="h4">{c.shortDescription}</Card.Header>
+              <Card.Body>
+                <Card.Title>           
+                      <li>{c.name}</li>
+                  </Card.Title>
+                <Card.Text>
+                  <li>Category: {c.category}</li>
+                  <li>Goal: {c.goal}</li>
+                </Card.Text>
+                <Link
+                      to={{
+                        pathname: `/challenge`,
+                        state: {
+                          _id: c._id,
+                        },
+                      }}
+                    >
+                      <Button variant="primary">Go To Challenge</Button>
+                    </Link>
+              </Card.Body>
+            </Card>
             </ul>
           </>
         ))}

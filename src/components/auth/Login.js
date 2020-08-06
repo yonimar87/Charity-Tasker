@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import classnames from "classnames";
+import className from "classnames";
 class Login extends Component {
   constructor() {
     super();
@@ -67,7 +67,7 @@ return (
                   error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {
+                  className={className("", {
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
@@ -84,7 +84,7 @@ return (
                   error={errors.password}
                   id="password"
                   type="password"
-                  className={classnames("", {
+                  className={className("", {
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />

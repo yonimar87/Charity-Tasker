@@ -43,6 +43,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="container">
+            <row>
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
@@ -58,6 +59,7 @@ class App extends Component {
               <PrivateRoute exact path="/pickedchallenges" component={PickedChallenges} />
             </Switch>
             <Footer />
+            </row>
           </div>
         </Router>
       </Provider>

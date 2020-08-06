@@ -40,3 +40,7 @@ li {
 .cardTitle {
   font-weight: bold;
 }
+
+#footer {
+  align-items: stretch;
+}

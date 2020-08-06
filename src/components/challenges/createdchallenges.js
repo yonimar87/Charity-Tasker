@@ -24,7 +24,7 @@ class MyChallengeList extends Component {
     );
   }
   render() {
-    const { user } = this.props.auth;
+    // const { user } = this.props.auth;
     return (
       <div>
         <h1>Challenges below</h1>

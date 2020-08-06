@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
-import classnames from "classnames";
+import className from "classnames";
 class Register extends Component {
   constructor() {
     super();
@@ -71,7 +71,7 @@ return (
                   error={errors.username}
                   id="username"
                   type="text"
-                  className={classnames("", {
+                  className={className("", {
                     invalid: errors.username
                   })}
                 />
@@ -85,7 +85,7 @@ return (
                   error={errors.name}
                   id="name"
                   type="text"
-                  className={classnames("", {
+                  className={className("", {
                     invalid: errors.name
                   })}
                 />
@@ -99,7 +99,7 @@ return (
                   error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {
+                  className={className("", {
                     invalid: errors.email
                   })}
                 />
@@ -113,7 +113,7 @@ return (
                   error={errors.password}
                   id="password"
                   type="password"
-                  className={classnames("", {
+                  className={className("", {
                     invalid: errors.password
                   })}
                 />
@@ -127,7 +127,7 @@ return (
                   error={errors.password2}
                   id="password2"
                   type="password"
-                  className={classnames("", {
+                  className={className("", {
                     invalid: errors.password2
                   })}
                 />

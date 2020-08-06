@@ -1,9 +1,11 @@
+//this page is currently not in use. However, will have a link to different catagories in which this page is called
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getChallenges } from "../../utils/challengesAPI";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Category extends Component {
   constructor() {
