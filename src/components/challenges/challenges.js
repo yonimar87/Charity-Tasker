@@ -30,14 +30,15 @@ class ChallengeList extends Component {
           <>
             <ul >
             <Card variant="warning">
-              <Card.Header as="h4">{c.shortDescription}</Card.Header>
+              <Card.Header as="h4">{c.name}</Card.Header>
               <Card.Body>
                 <Card.Title>           
-                      <li>{c.name}</li>
+                      <li>Goal: {c.goal}</li>
                   </Card.Title>
                 <Card.Text>
                   <li>Category: {c.category}</li>
-                  <li>Goal: {c.goal}</li>
+                  <li>Description: {c.description}</li>
+                  <li>Current Likes: {c.likes}</li>
                 </Card.Text>
                 <Link
                       to={{

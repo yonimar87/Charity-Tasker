@@ -66,11 +66,6 @@ class createChallenge extends Component {
           </label>
           <br></br>
           <label>
-            Short Description
-            <textarea name="shortDescription" onChange={this.handleChange} />
-          </label>
-          <br></br>
-          <label>
             Long Description
             <textarea name="description" onChange={this.handleChange} />
           </label>

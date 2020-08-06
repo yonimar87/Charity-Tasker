@@ -72,13 +72,13 @@ class singleChallenge extends Component {
             <br></br> 
            <Card.Text>{this.state.challenge[0].category}</Card.Text> 
           </li>
-          <li className="singleChallengeList"><Card.Header>Short Description</Card.Header>
-            <br></br>
-            <Card.Text>{this.state.challenge[0].shortDescription}</Card.Text> 
-           </li>
           <li className="singleChallengeList"><Card.Header>Description</Card.Header>
             <br></br>
             <Card.Text>{this.state.challenge[0].description}</Card.Text> 
+            </li>
+          <li className="singleChallengeList"><Card.Header>Likes Goal</Card.Header>
+            <br></br>
+            <Card.Text> {this.state.challenge[0].goal}</Card.Text> 
             </li>
           <li className="singleChallengeList"><Card.Header>Likes</Card.Header>
             <br></br>
