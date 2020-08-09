@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { registerUser, loginUser } from "../../actions/authActions";
+import { registerUser, /*loginUser*/ } from "../../actions/authActions";
 import "bootstrap/dist/css/bootstrap.min.css";
-import className from "classnames";
+// import className from "classnames";
 class Register extends Component {
   constructor() {
     super();

@@ -24,7 +24,7 @@ class Category extends Component {
     getChallenges().then((res) => this.setState({ challenges: res.data }));
   }
   render() {
-    const { user } = this.props.auth;
+    // const { user } = this.props.auth;
     return (
       <div>
         <h1>Challenges below</h1>
