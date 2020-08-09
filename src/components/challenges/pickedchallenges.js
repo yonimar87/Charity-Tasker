@@ -25,7 +25,7 @@ class PickedChallengeList extends Component {
     );
   }
   render() {
-    const { user } = this.props.auth;
+    // const { user } = this.props.auth;
     return (
       <div>
         <h1>CHALLENGES TO COMPLETE</h1>

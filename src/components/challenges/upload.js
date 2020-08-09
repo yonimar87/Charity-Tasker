@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 export default function Upload() {
-  const [fileInputState, setFileInputState] = useState("");
+  const [fileInputState, /*setFileInputState*/] = useState("");
   const [previewSource, setPreviewSource] = useState();
-  const [selectedFile, setSelectedFile] = useState("");
+  // const [selectedFile, setSelectedFile] = useState("");
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
@@ -21,7 +21,7 @@ export default function Upload() {
     console.log("submitting");
     e.preventDefault();
     if (!previewSource) return;
-    const reader = new FileReader();
+    // const reader = new FileReader();
     uploadImage(previewSource);
   };
 

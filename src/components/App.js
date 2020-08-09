@@ -19,7 +19,6 @@ import createChallenge from "./challenges/challengeNew";
 import singleChallenge from "./challenges/challenge";
 import MyCreatedChallenge from "./challenges/createdchallenges";
 import PickedChallenges from "./challenges/pickedchallenges";
-import { Jumbotron } from "react-bootstrap";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
