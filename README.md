@@ -26,7 +26,7 @@ The following dependencies are installed for the front-end:
 
 ## Currently waiting on Deployment:
 
-This should be completed using Heroku for the front end, and Netify for the back-end.
+This should be completed using Heroku for the front end, and Netlify for the back-end.
 
 ## Author
 

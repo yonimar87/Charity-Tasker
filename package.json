@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:1337",
+  "proxy": "https://charity-tasker.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },

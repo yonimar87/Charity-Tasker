@@ -93,7 +93,7 @@ class singleChallenge extends Component {
               <Card.Text> {this.state.challenge[0].likes}</Card.Text>
             </li>
             <li className="singleChallengeList">
-              <Card.Header>Fulfilled By</Card.Header>
+              <Card.Header>Picked Up By</Card.Header>
               <br></br>
               <Card.Text>{this.state.challenge[0].fulfilledBy_id}</Card.Text>
             </li>
