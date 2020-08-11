@@ -8,7 +8,7 @@ export const registerUser = (userData, history) => (dispatch) => {
     .post("/api/users/register", userData)
     .then((res) => {
       axios
-        .post("/api/users/login", userData)
+        .post("https://charity-tasker.herokuapp.com/api/users/login", userData)
         .then((res) => {
           const { token } = res.data;
           localStorage.setItem("jwtToken", token);
@@ -35,7 +35,7 @@ export const registerUser = (userData, history) => (dispatch) => {
 // Login - get user token
 export const loginUser = (userData) => (dispatch) => {
   axios
-    .post("/api/users/login", userData)
+    .post("https://charity-tasker.herokuapp.com/api/users/login", userData)
     .then((res) => {
       // Save to localStorage
       // Set token to localStorage
