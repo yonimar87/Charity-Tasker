@@ -31,7 +31,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "proxy": "https://charity-tasker.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },

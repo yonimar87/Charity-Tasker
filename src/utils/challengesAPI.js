@@ -14,7 +14,7 @@ export const pickChallenge = (challenge_id, auth) => {
 };
 
 export const getChallenges = () => {
-  return axios.get("https://charity-tasker.herokuapp.com/api/challenges");
+  return axios.get(`${process.env.REACT_APP_API_SERVER_URI}/api/challenges`);
 };
 
 export const updateLikes = (challengeId, newLikesCount) => {
