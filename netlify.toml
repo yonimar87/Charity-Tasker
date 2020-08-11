@@ -4,7 +4,7 @@
   status = 200
 
 [[redirects]]
-  from = "charity-tasker.netlify.app"
-  to = "https://charity-tasker.herokuapp.com/:splat"
+  from = "/api/*"
+  to = "https://charity-tasker.herokuapp.com/api/:splat"
   status = 200
   force = true
