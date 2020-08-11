@@ -1,20 +1,21 @@
 import axios from "axios";
+import { URI } from '../config/api_server'
 
 export const sendChallenge = (challengeInput) => {
   console.log(challengeInput);
 
-  return axios.post("/api/challenges", challengeInput);
+  return axios.post(`${URI}/api/challenges`, challengeInput);
 };
 
 export const pickChallenge = (challenge_id, auth) => {
   console.log(challenge_id);
   console.log(auth);
   const body = { challenge_id, user_id: auth.user.id };
-  return axios.put("/api/challenges", body);
+  return axios.put(`${URI}/api/challenges`, body);
 };
 
 export const getChallenges = () => {
-  return axios.get(`${process.env.REACT_APP_API_SERVER_URI}/api/challenges`);
+  return axios.get(`${URI}/api/challenges`);
 };
 
 export const updateLikes = (challengeId, newLikesCount) => {
@@ -33,23 +34,23 @@ export const updateStatus = (challengeId, newStatus) => {
 
 export const updateChallenge = (challengeId, updatedValue) => {
   return axios.patch(
-    `https://charity-tasker.herokuapp.com/api/challenges/${challengeId}`,
+    `${URI}/api/challenges/${challengeId}`,
     updatedValue
   );
 };
 
 export const getCreatedChallenges = (auth) => {
   const id = auth.user.id;
-  return axios.get(`https://charity-tasker.herokuapp.com/api/challenges?creator_id=${id}`);
+  return axios.get(`${URI}/api/challenges?creator_id=${id}`);
 };
 
 export const getPickedChallenges = (auth) => {
   const id = auth.user.id;
-  return axios.get(`https://charity-tasker.herokuapp.com/api/challenges?fulfilledBy_id=${id}`);
+  return axios.get(`${URI}/api/challenges?fulfilledBy_id=${id}`);
 };
 
 export const getChallenge = (id) => {
-  return axios.get(`https://charity-tasker.herokuapp.com/api/challenges/${id}`);
+  return axios.get(`${URI}/api/challenges/${id}`);
 };
 
 // import setAuthToken from "../utils/setAuthToken";
