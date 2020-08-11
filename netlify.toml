@@ -5,12 +5,6 @@
 
 [[redirects]]
   from = "/api/*"
-<<<<<<< HEAD
   to = "https://charity-tasker.herokuapp.com/:splat"
   status = 200
   force = true
-=======
-  to = "https://charity-tasker.herokuapp.com/api/:splat"
-  status = 200
-  force = true
->>>>>>> 9b723937cd928af73792d9608ba402173f3249f2
