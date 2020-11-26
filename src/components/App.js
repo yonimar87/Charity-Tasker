@@ -12,7 +12,7 @@ import Login from "./auth/Login";
 import PrivateRoute from "./private-route/PrivateRoute";
 import Dashboard from "./dashboard/Dashboard";
 import Challenges from "./challenges/challenges";
-import Charities from "./charities/charities";
+import CharitiesList from "./charities/charitiesLink";
 import Category from "./challenges/category";
 import Footer from "./layout/Footer";
 import createChallenge from "./challenges/challengeNew";
@@ -48,7 +48,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/charities" component={Charities} />
+            <Route exact path="/charities" component={CharitiesList} />
             <Route exact path="/category" component={Category} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />

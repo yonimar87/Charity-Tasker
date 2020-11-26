@@ -12,6 +12,7 @@ import Upload from "./upload.js";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
+
 class singleChallenge extends Component {
   constructor(props) {
     super(props);
@@ -70,32 +71,32 @@ class singleChallenge extends Component {
     return (
       <div className="container">
         <h3>Challenge Title: {this.state.challenge[0].name}</h3>
-        <ul>
-          <Card>
+        <ul >
+          <Card id="singleCardID">
             <li className="singleChallengeList">
-              <Card.Header>Category</Card.Header>
+              <Card.Header class="cards_headers">Category</Card.Header>
               <br></br>
-              <Card.Text>{this.state.challenge[0].category}</Card.Text>
+              <Card.Text class="cards_body">{this.state.challenge[0].category}</Card.Text>
             </li>
             <li className="singleChallengeList">
-              <Card.Header>Description</Card.Header>
+              <Card.Header class="cards_headers">Description</Card.Header>
               <br></br>
-              <Card.Text>{this.state.challenge[0].description}</Card.Text>
+              <Card.Text class="cards_body">{this.state.challenge[0].description}</Card.Text>
             </li>
             <li className="singleChallengeList">
-              <Card.Header>Likes Goal</Card.Header>
+              <Card.Header class="cards_headers">Likes Goal</Card.Header>
               <br></br>
-              <Card.Text> {this.state.challenge[0].goal}</Card.Text>
+              <Card.Text class="cards_body"> {this.state.challenge[0].goal}</Card.Text>
             </li>
             <li className="singleChallengeList">
-              <Card.Header>Likes</Card.Header>
+              <Card.Header class="cards_headers">Likes</Card.Header>
               <br></br>
-              <Card.Text> {this.state.challenge[0].likes}</Card.Text>
+              <Card.Text class="cards_body"> {this.state.challenge[0].likes}</Card.Text>
             </li>
             <li className="singleChallengeList">
-              <Card.Header>Picked Up By</Card.Header>
+              <Card.Header class="cards_headers">Picked Up By</Card.Header>
               <br></br>
-              <Card.Text>{this.state.challenge[0].fulfilledBy_id}</Card.Text>
+              <Card.Text class="cards_body">{this.state.challenge[0].fulfilledBy_id}</Card.Text>
             </li>
             <Link to="/pickedchallenges">
               <button className="greenButton" onClick={this.handleClick}>

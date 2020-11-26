@@ -17,10 +17,10 @@ function ChallengeList (props) {
         {console.log(challengesList)}
         {challengesList.map((c) => (
           <>
-            <ul>
-              <Card variant="warning">
-                <Card.Header as="h4">{c.name}</Card.Header>
-                <Card.Body>
+            <ul id="challengeList">
+              <Card variant="warning" >
+                <Card.Header class="cards_headers" as="h4">{c.name}</Card.Header>
+                <Card.Body class="cards_body">
                   <Card.Title>
                     <li>Goal: {c.goal}</li>
                   </Card.Title>

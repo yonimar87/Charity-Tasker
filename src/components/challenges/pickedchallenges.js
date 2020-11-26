@@ -5,6 +5,8 @@ import { logoutUser } from "../../actions/authActions";
 import { getPickedChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
+import "./challenges.css"
+
 
 function PickedChallengeList (props) {
   const [challenges, setChallenge] = useState([]);
@@ -21,7 +23,7 @@ function PickedChallengeList (props) {
         <>
           <ul>
             <Card>
-              <Card.Header as="h4">
+              <Card.Header as="h4" class="cards_headers">
                 <Link
                   to={{
                     pathname: `/challenge`,
@@ -33,7 +35,7 @@ function PickedChallengeList (props) {
                   <li>{c.name}</li>
                 </Link>
               </Card.Header>
-              <Card.Text>
+              <Card.Text class="cards_body">
                 <li>Category: {c.category}</li>
                 <li>Goal: {c.goal} likes</li>
                 <li>{c.shortDescription}</li>

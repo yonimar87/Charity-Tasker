@@ -20,9 +20,13 @@
 #Navbar {
   background-color: #223623;
 }
+#singleCardID{
+  background-color: yellowgreen;
+}
 
 li {
   list-style: none;
+  max-width: auto;
 }
 
 .col {
@@ -52,10 +56,7 @@ li {
 
 #footer {
   align-items: stretch;
-}
-
-.card-headed {
-  background-color: #fce205;
+  justify-items: center;
 }
 
 form {
@@ -70,4 +71,25 @@ form {
 
 .center {
   background-color: pink;
+}
+
+.cards_headers {
+  background-color: rgba(230, 242, 7, 0.947);
+}
+
+.cards_body {
+  background-color: yellowgreen;
+}
+
+#challengeList {
+  max-width: 80%;
+  align-content: center;
+}
+
+#singleCardID2{
+  background-color: yellowgreen;
+}
+
+#singleCardID{
+  background-color: yellowgreen;
 }

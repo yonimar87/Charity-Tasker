@@ -6,6 +6,7 @@ import { getCreatedChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
+
 function MyChallengeList (props) {
   const [createdChallenges, setCreatedChallenges] = useState([]);
 
@@ -19,9 +20,9 @@ function MyChallengeList (props) {
       <h1>Challenges below</h1>
       {createdChallenges.map((c) => (
         <>
-          <ul>
-            <Card>
-              <Card.Header as="h4">
+          <ul key={c._id}>
+            <Card id="singleCardID2">
+              <Card.Header as="h4" class="cards_headers">
                 <Link
                   to={{
                     pathname: `/challenge`,
@@ -33,7 +34,7 @@ function MyChallengeList (props) {
                   <li>{c.name}</li>
                 </Link>
               </Card.Header>
-              <Card.Text>
+              <Card.Text class="cards_body">
                 <li></li>
                 <li>Category: {c.category}</li>
                 <li>Goal: {c.goal} Likes</li>
