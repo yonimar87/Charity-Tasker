@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { getChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
-import { Card, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import SearchBar from "../searchBar/searchBar"
 
 function ChallengeList (props) {
   const [challengesList, setChallengesList] = useState([]);
+  const [input, setInput] = useState('');
+  const [challengeListDefault, setChallengeListDefault] = useState();
+  
+    const updateInput = async (input) => {
+       const filtered = challengeListDefault.filter(challenge => {
+        return challenge.name.toLowerCase().includes(input.toLowerCase())
+       })
+       setInput(input);
+       setChallengesList(filtered);
+    }
+
 
   useEffect( () => {
     getChallenges(props.auth).then((res) => 
@@ -14,21 +26,18 @@ function ChallengeList (props) {
     return (
       <div>
         <h1>Challenges below</h1>
+        <SearchBar 
+          input={input} 
+          onChange={updateInput}/>
         {console.log(challengesList)}
         {challengesList.map((c) => (
           <>
             <ul id="challengeList">
-              <Card variant="warning" >
-                <Card.Header class="cards_headers" as="h4">{c.name}</Card.Header>
-                <Card.Body class="cards_body">
-                  <Card.Title>
+                {c.name}
                     <li>Goal: {c.goal}</li>
-                  </Card.Title>
-                  <Card.Text>
                     <li>Category: {c.category}</li>
                     <li>Description: {c.description}</li>
                     <li>Current Likes: {c.likes}</li>
-                  </Card.Text>
                   <Link
                     to={{
                       pathname: `/challenge`,
@@ -39,8 +48,6 @@ function ChallengeList (props) {
                   >
                     <Button variant="primary">Go To Challenge</Button>
                   </Link>
-                </Card.Body>
-              </Card>
             </ul>
           </>
         ))}

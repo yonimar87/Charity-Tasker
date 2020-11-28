@@ -50,7 +50,7 @@ class Landing extends Component {
               title="Challenges"
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/XI8l61-xCOU"
+              src="https://www.youtube.com/embed/M9gopSGhmuE"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -62,3 +62,4 @@ class Landing extends Component {
   }
 }
 export default Landing;
+

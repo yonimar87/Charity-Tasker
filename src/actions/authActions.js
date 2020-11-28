@@ -6,8 +6,9 @@ import { URI } from '../config/api_server'
 
 // Register User
 export const registerUser = (userData, history) => (dispatch) => {
+  console.log(URI)
   axios
-    .post("/api/users/register", userData)
+    .post(`${URI}/api/users/register`, userData)
     .then((res) => {
       axios
         .post(`${URI}/api/users/login`, userData)
@@ -27,7 +28,7 @@ export const registerUser = (userData, history) => (dispatch) => {
         );
     })
     .catch((err) => {
-      console.log(err + "There was an");
+      console.log("There was an", {err}, URI);
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data,
@@ -36,6 +37,8 @@ export const registerUser = (userData, history) => (dispatch) => {
 };
 // Login - get user token
 export const loginUser = (userData) => (dispatch) => {
+  console.log(URI)
+
   axios
     .post(`${URI}/api/users/login`, userData)
     .then((res) => {
@@ -50,12 +53,13 @@ export const loginUser = (userData) => (dispatch) => {
       // Set current user
       dispatch(setCurrentUser(decoded));
     })
-    .catch((err) =>
-      dispatch({
+    .catch((err) => {
+    console.log("there is a LOGIN", {err})
+      return dispatch({
         type: GET_ERRORS,
         payload: err.response.data,
       })
-    );
+    });
 };
 // Set logged in user
 export const setCurrentUser = (decoded) => {

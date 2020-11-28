@@ -14,9 +14,9 @@ class NavbarBlue extends Component {
     const { user } = this.props.auth;
     console.log(user);
     return (
-      <div className="container">
-        <Navbar id="Navbar" variant="primary">
-          <Nav className="mr-auto">
+      <div>
+        <Navbar>
+          <Nav>
             {user.id ? (
               <>
                 <Nav.Link onClick={this.onLogoutClick}> Logout </Nav.Link>

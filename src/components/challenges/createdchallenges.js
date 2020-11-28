@@ -21,8 +21,6 @@ function MyChallengeList (props) {
       {createdChallenges.map((c) => (
         <>
           <ul key={c._id}>
-            <Card id="singleCardID2">
-              <Card.Header as="h4" class="cards_headers">
                 <Link
                   to={{
                     pathname: `/challenge`,
@@ -33,15 +31,11 @@ function MyChallengeList (props) {
                 >
                   <li>{c.name}</li>
                 </Link>
-              </Card.Header>
-              <Card.Text class="cards_body">
                 <li></li>
                 <li>Category: {c.category}</li>
                 <li>Goal: {c.goal} Likes</li>
                 <li>Current Likes: {c.likes}</li>
                 <li>Description: {c.shortDescription}</li>
-              </Card.Text>
-            </Card>
           </ul>
         </>
       ))}

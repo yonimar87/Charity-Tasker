@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Container, Col, Row } from "react-bootstrap";
+import { Card, Button, Col, Row } from "react-bootstrap";
 
 function Charities () {
 
@@ -42,13 +42,11 @@ function Charities () {
   return (
     <div>
         <h1>CHARITIES WE WORK WITH</h1>
-        <Container>
           <Row>
             <Col>
               <Card
                 style={{
                   width: "15rem",
-                  backgroundColor: "#223623",
                   color: "#B6CA91",
                 }}
               >
@@ -79,7 +77,6 @@ function Charities () {
               <Card
                 style={{
                   width: "15rem",
-                  backgroundColor: "#223623",
                   color: "#B6CA91",
                 }}
               >
@@ -110,7 +107,6 @@ function Charities () {
               <Card
                 style={{
                   width: "15rem",
-                  backgroundColor: "#223623",
                   color: "#B6CA91",
                 }}
               >
@@ -141,7 +137,6 @@ function Charities () {
               <Card
                 style={{
                   width: "15rem",
-                  backgroundColor: "#223623",
                   color: "#B6CA91",
                 }}
               >
@@ -168,7 +163,6 @@ function Charities () {
               </Card>
             </Col>
           </Row>
-        </Container>
       </div>
   );
 }

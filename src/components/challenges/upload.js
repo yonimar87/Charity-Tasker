@@ -42,14 +42,12 @@ export default function Upload() {
       <h3>Upload</h3>
       <form onSubmit={handleSubmitFile}>
         <input
-          className="upload"
-          id="chooseFile"
           type="file"
           name="image"
           onChange={handleFileInputChange}
           value={fileInputState}
         />
-        <button className="upload" type="submit">
+        <button  type="submit">
           {" "}
           Submit{" "}
         </button>

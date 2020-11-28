@@ -8,7 +8,7 @@ import {
   updateLikes,
   updateStatus,
 } from "../../utils/challengesAPI";
-import Upload from "./upload.js";
+// import Upload from "./upload.js";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
@@ -69,49 +69,47 @@ class singleChallenge extends Component {
     }
     // const { user } = this.props.auth;
     return (
-      <div className="container">
+      <div>
         <h3>Challenge Title: {this.state.challenge[0].name}</h3>
         <ul >
-          <Card id="singleCardID">
-            <li className="singleChallengeList">
-              <Card.Header class="cards_headers">Category</Card.Header>
+            <li>
+              Category
               <br></br>
-              <Card.Text class="cards_body">{this.state.challenge[0].category}</Card.Text>
+              {this.state.challenge[0].category}
             </li>
-            <li className="singleChallengeList">
-              <Card.Header class="cards_headers">Description</Card.Header>
+            <li>
+              Description
               <br></br>
-              <Card.Text class="cards_body">{this.state.challenge[0].description}</Card.Text>
+              {this.state.challenge[0].description}
             </li>
-            <li className="singleChallengeList">
-              <Card.Header class="cards_headers">Likes Goal</Card.Header>
+            <li>
+              Likes Goal
               <br></br>
-              <Card.Text class="cards_body"> {this.state.challenge[0].goal}</Card.Text>
+               {this.state.challenge[0].goal}
             </li>
-            <li className="singleChallengeList">
-              <Card.Header class="cards_headers">Likes</Card.Header>
+            <li>
+              Likes
               <br></br>
-              <Card.Text class="cards_body"> {this.state.challenge[0].likes}</Card.Text>
+               {this.state.challenge[0].likes}
             </li>
-            <li className="singleChallengeList">
-              <Card.Header class="cards_headers">Picked Up By</Card.Header>
+            <li>
+              Picked Up By
               <br></br>
-              <Card.Text class="cards_body">{this.state.challenge[0].fulfilledBy_id}</Card.Text>
+              {this.state.challenge[0].fulfilledBy_id}
             </li>
             <Link to="/pickedchallenges">
-              <button className="greenButton" onClick={this.handleClick}>
+              <button onClick={this.handleClick}>
                 Click here to pick the challenge for yourself
               </button>
             </Link>
 
-            <button className="greenButton" onClick={this.incrementMe}>
+            <button onClick={this.incrementMe}>
               Likes: {this.state.challenge[0].likes}{" "}
             </button>
-            <Upload />
-            <button className="greenButton" onClick={this.challengeComplete}>
+            {/* <Upload /> */}
+            <button onClick={this.challengeComplete}>
               Status: {this.state.challenge[0].status}
             </button>
-          </Card>
         </ul>
       </div>
     );

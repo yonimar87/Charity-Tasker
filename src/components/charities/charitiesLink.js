@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, Button, Container, Col, Row } from "react-bootstrap";
 
 function CharitiesList () {
 
@@ -41,9 +40,7 @@ function CharitiesList () {
   return (
     <div>
         <h1>CHARITIES WE WORK WITH</h1>
-        <Container>
          <h1>THIS WILL BECOME A REVOLVING WINDOW OF CHARITIES</h1>
-        </Container>
       </div>
   );
 }

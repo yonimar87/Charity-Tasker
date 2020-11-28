@@ -45,7 +45,7 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container">
+      <div>
         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
           <h4>
             <b>Login</b> below
