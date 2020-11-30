@@ -1,16 +1,19 @@
+/* eslint-disable no-use-before-define */
 import React from 'react';
 
-const SearchBar = ({keyword,setKeyword}) => {
-  const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
+export default function SearchBar ({keyword,setKeyword}) {
+  const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem", margin:"1rem"};
+  console.log(keyword, setKeyword)
   return (
     <input 
      style={BarStyling}
      key="random1"
      value={keyword}
-     placeholder={"search challenges"}
-     onChange={(e) => setKeyword(e.target.value)}
+     placeholder="Please Search for Challenges"
+     onChange={(e) => {
+      console.log(e.target.value) 
+      setKeyword(e.target.value)
+    }}
     />
   );
 }
-
-export default SearchBar

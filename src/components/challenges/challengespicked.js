@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { getChallenges } from "../../utils/challengesAPI";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
+import { getPickedChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
 import SearchBar from "../searchBar/searchBar"
 import Button from '@material-ui/core/Button';
@@ -42,19 +45,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ChallengeList (props) {
-    const classes = useStyles();
-
-    const [challengesList, setChallengesList] = useState([]);
-    const [keyword, setKeyword] = useState('');
-  
-    const filterChallenge = (challenge) => {
-      return challenge.name.toLowerCase().includes(keyword.toLowerCase())
-    }
+function PickedChallengeList (props) {
+    const [challenges, setChallenge] = useState([]);
   
     useEffect( () => {
-      getChallenges(props.auth).then((res) => 
-      setChallengesList(res.data)
+      getPickedChallenges(props.auth).then((res) =>
+      setChallenge(res.data)
       )}, [props.auth]);
   
     return (
@@ -65,25 +61,8 @@ export default function ChallengeList (props) {
         <div className={classes.heroContent}>
             <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                Challenge Accepted!
+                Challenges to complete
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                Welcome to our list of challenges. Lets make the world a better place by donating funds to charities and having fun while doing so!
-            </Typography>
-            <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="center">
-                <Grid item>
-                    <Button variant="contained" color="primary">
-                      Available Challenges
-                    </Button>
-                </Grid>
-                <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Taken Challenges
-                    </Button>
-                </Grid>
-                </Grid>
-            </div>
             </Container>
         </div>
         <div style={{textAlign:"center"}}>
@@ -94,7 +73,7 @@ export default function ChallengeList (props) {
         <Container className={classes.cardGrid} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={4}>
-            {challengesList.filter(filterChallenge).map((challenge) => (
+            {challenges.map((challenge) => (
                 <Grid item key={challenge} xs={12} sm={6} md={4}>
                 <Card className={classes.challenge}>
                     <CardMedia
@@ -107,7 +86,26 @@ export default function ChallengeList (props) {
                         {challenge.name}
                     </Typography>
                     <Typography>
+                        {challenge.category}
+                    </Typography>
+                    <Typography>
+                        {challenge.goal}
+                    </Typography>
+                    <Typography>
+                        {challenge.shortDescription}
+                    </Typography>
+                    <Typography>
                         {challenge.description}
+                    </Typography>
+                    <Typography>
+                        {challenge.likes}
+                    </Typography>
+                    <Typography>
+                        {" "}
+                        {challenge.status 
+                        // ? "Challenge already completed!"
+                        // : "Still needs completing...."
+                        }   
                     </Typography>
                     </CardContent>
                     <CardActions>

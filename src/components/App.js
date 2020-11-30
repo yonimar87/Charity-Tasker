@@ -16,9 +16,11 @@ import CharitiesList from "./charities/charitiesLink";
 import Category from "./challenges/category";
 import Footer from "./layout/Footer";
 import createChallenge from "./challenges/challengeNew";
-import singleChallenge from "./challenges/challenge";
+import singleChallenge from "./challenges/WorkingOnChallenge";
 import MyCreatedChallenge from "./challenges/createdchallenges";
 import PickedChallenges from "./challenges/pickedchallenges";
+import Container from '@material-ui/core/Container';
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -41,7 +43,8 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <Container maxWidth="lg" style={{textAlign:"center", backgroundColor:"#dedcde"}}>
+        <Provider store={store}>
         <Router>
           <div>
             <Navbar />
@@ -78,6 +81,7 @@ class App extends Component {
           </div>
         </Router>
       </Provider>
+      </Container>
     );
   }
 }

@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -10,7 +11,6 @@ import {
 } from "../../utils/challengesAPI";
 // import Upload from "./upload.js";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
 
 
 class singleChallenge extends Component {
@@ -55,12 +55,14 @@ class singleChallenge extends Component {
   };
 
   challengeComplete = () => {
-    const challenges = this.state.challenge.slice(0);
-    challenges[0].status = "Completed";
-    this.setState({
-      challenges: challenges,
-    });
-    updateStatus(this.state.challenge[0]._id, challenges[0].status);
+    if (this.challenge === [true]) {
+      let challenges = this.state.challenge.slice(0);
+      challenges[0].status = "Completed";
+      this.setState({
+        challenges: challenges,
+      });
+      updateStatus(this.state.challenge[0]._id, challenges[0].status);
+    } 
   };
 
   render() {
@@ -108,7 +110,7 @@ class singleChallenge extends Component {
             </button>
             {/* <Upload /> */}
             <button onClick={this.challengeComplete}>
-              Status: {this.state.challenge[0].status}
+              Status (Click to complete): {this.state.challenge[0].status}
             </button>
         </ul>
       </div>

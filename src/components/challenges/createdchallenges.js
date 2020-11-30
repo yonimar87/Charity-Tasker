@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getCreatedChallenges } from "../../utils/challengesAPI";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
 
 
 function MyChallengeList (props) {
@@ -13,7 +12,7 @@ function MyChallengeList (props) {
   useEffect( () => {
     getCreatedChallenges(props.auth).then((res) => 
     setCreatedChallenges(res.data)
-    )}, []);
+    )}, [props.auth]);
 
   return (
     <div>
@@ -21,21 +20,21 @@ function MyChallengeList (props) {
       {createdChallenges.map((c) => (
         <>
           <ul key={c._id}>
-                <Link
-                  to={{
-                    pathname: `/challenge`,
-                    state: {
-                      _id: c._id,
-                    },
-                  }}
-                >
-                  <li>{c.name}</li>
-                </Link>
-                <li></li>
-                <li>Category: {c.category}</li>
-                <li>Goal: {c.goal} Likes</li>
-                <li>Current Likes: {c.likes}</li>
-                <li>Description: {c.shortDescription}</li>
+            <Link
+              to={{
+                pathname: `/challenge`,
+                state: {
+                  _id: c._id,
+                },
+              }}
+            >
+              <li>{c.name}</li>
+            </Link>
+            <li></li>
+            <li>Category: {c.category}</li>
+            <li>Goal: {c.goal} Likes</li>
+            <li>Current Likes: {c.likes}</li>
+            <li>Description: {c.shortDescription}</li>
           </ul>
         </>
       ))}
