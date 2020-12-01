@@ -2,39 +2,39 @@ import React from "react";
 
 function CharitiesList () {
 
-  const img1 = new Image();
-  img1.src = "https://www.rspca.org.au/sites/all/themes/rspca/logo.png";
-  const img2 = new Image();
-  img2.src = "http://yourimage.jpg";
-  const img3 = new Image();
-  img3.src = "http://yourimage.jpg";
-  const img4 = new Image();
-  img4.src = "http://yourimage.jpg";
+  // const img1 = new Image();
+  // img1.src = "https://www.rspca.org.au/sites/all/themes/rspca/logo.png";
+  // const img2 = new Image();
+  // img2.src = "http://yourimage.jpg";
+  // const img3 = new Image();
+  // img3.src = "http://yourimage.jpg";
+  // const img4 = new Image();
+  // img4.src = "http://yourimage.jpg";
 
-  const charityList = [
-    {
-      "title": '',
-      "charityDesc1": "THIS IS A TEST The RSPCA is an independent, community-based charity providing animal care and protection services across the country.",
-      "image": "1"
-    },
-    {
-      "title": '',
-      "charityDesc2": "The aim of founding StreetSmart was to simultaneously break down inaccurate prejudices about homelessness, raise vital funds for important smaller, local organisations and strengthen them through collaboration and connecting them to their community.",
-      "image": "1"
-    },
-    {
-      "title": '',
-      "charityDesc3": "The very first Ronald McDonald House in Australia opened in Camperdown, near the Children’s Hospital in 1981. In 1995, RMHC Charities Greater Western Sydney (GWS) relocated the House to Westmead, to continue providing vital services to families after the hospital had relocated to Western Sydney. Today, our Westmead House provides a safe place to stay for around 1,360 families per year..",
-      "image": "1"
-    },
-    {
-      "title": '',
-      "charityDesc4": "Starlight's mission is To brighten the lives of seriously ill children and their families .Because sick kids are still kids at heart... ",
-      "image": "1"
-    }, 
-  ];
+  // const charityList = [
+  //   {
+  //     "title": '',
+  //     "charityDesc1": "THIS IS A TEST The RSPCA is an independent, community-based charity providing animal care and protection services across the country.",
+  //     "image": "1"
+  //   },
+  //   {
+  //     "title": '',
+  //     "charityDesc2": "The aim of founding StreetSmart was to simultaneously break down inaccurate prejudices about homelessness, raise vital funds for important smaller, local organisations and strengthen them through collaboration and connecting them to their community.",
+  //     "image": "1"
+  //   },
+  //   {
+  //     "title": '',
+  //     "charityDesc3": "The very first Ronald McDonald House in Australia opened in Camperdown, near the Children’s Hospital in 1981. In 1995, RMHC Charities Greater Western Sydney (GWS) relocated the House to Westmead, to continue providing vital services to families after the hospital had relocated to Western Sydney. Today, our Westmead House provides a safe place to stay for around 1,360 families per year..",
+  //     "image": "1"
+  //   },
+  //   {
+  //     "title": '',
+  //     "charityDesc4": "Starlight's mission is To brighten the lives of seriously ill children and their families .Because sick kids are still kids at heart... ",
+  //     "image": "1"
+  //   }, 
+  // ];
 
-  const maxLength = 80;
+  // const maxLength = 80;
 
 
   return (

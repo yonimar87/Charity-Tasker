@@ -14,12 +14,13 @@ import Dashboard from "./dashboard/Dashboard";
 import Challenges from "./challenges/challenges";
 import CharitiesList from "./charities/charitiesLink";
 import Category from "./challenges/category";
-import Footer from "./layout/Footer";
 import createChallenge from "./challenges/challengeNew";
-import singleChallenge from "./challenges/WorkingOnChallenge";
+import singleChallenge from "./challenges/challenge";
 import MyCreatedChallenge from "./challenges/createdchallenges";
 import PickedChallenges from "./challenges/pickedchallenges";
 import Container from '@material-ui/core/Container';
+import Footer from "./layout/Footer";
+
 
 
 // Check for token to keep user logged in
@@ -46,7 +47,6 @@ class App extends Component {
       <Container maxWidth="lg" style={{textAlign:"center", backgroundColor:"#dedcde"}}>
         <Provider store={store}>
         <Router>
-          <div>
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
@@ -77,10 +77,9 @@ class App extends Component {
                 component={PickedChallenges}
               />
             </Switch>
-            <Footer />
-          </div>
         </Router>
       </Provider>
+      <Footer />
       </Container>
     );
   }

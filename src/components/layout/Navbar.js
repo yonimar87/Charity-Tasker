@@ -15,7 +15,7 @@ class NavbarBlue extends Component {
     console.log(user);
     return (
       <div>
-        <Navbar>
+        <Navbar style={{backgroundColor:"#94a8b3"}}>
           <Nav>
             {user.id ? (
               <>

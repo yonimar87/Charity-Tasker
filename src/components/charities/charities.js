@@ -40,14 +40,15 @@ function Charities () {
   ];
 
   return (
-    <div>
+    <div style={{backgroundColor: "#94a8b3"}}>
         <h1>CHARITIES WE WORK WITH</h1>
           <Row>
             <Col>
               <Card
                 style={{
                   width: "15rem",
-                  color: "#B6CA91",
+                  color: "#94a8b3",
+                  backgroundColor: "#dcd3c9",
                 }}
               >
                 <Card.Img
@@ -77,7 +78,8 @@ function Charities () {
               <Card
                 style={{
                   width: "15rem",
-                  color: "#B6CA91",
+                  color: "#94a8b3",
+                  backgroundColor: "#dcd3c9"
                 }}
               >
                 <Card.Img
@@ -107,7 +109,8 @@ function Charities () {
               <Card
                 style={{
                   width: "15rem",
-                  color: "#B6CA91",
+                  color: "#94a8b3",
+                  backgroundColor: "#dcd3c9"
                 }}
               >
                 <Card.Img
@@ -137,7 +140,8 @@ function Charities () {
               <Card
                 style={{
                   width: "15rem",
-                  color: "#B6CA91",
+                  color: "#94a8b3",
+                  backgroundColor: "#dcd3c9"
                 }}
               >
                 <Card.Img

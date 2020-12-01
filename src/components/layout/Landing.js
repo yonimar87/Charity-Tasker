@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
+
 class Landing extends Component {
   render() {
     return (
@@ -45,7 +46,6 @@ class Landing extends Component {
                 <Button variant="warning">Log In</Button>
               </Link>
             </div>
-
             <iframe
               title="Challenges"
               width="560"
@@ -55,6 +55,7 @@ class Landing extends Component {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
+
           </div>
         </div>
       </div>

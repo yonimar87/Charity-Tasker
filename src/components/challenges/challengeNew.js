@@ -43,15 +43,16 @@ class createChallenge extends Component {
       return <Redirect to={this.state.redirect} />;
     }
     return (
-      <div>
+      <div className="container">
         <h1>Create a new challenge</h1>
         <form onSubmit={this.handleSubmit} className="login">
-          <div>
+          <div className="form-group">
             <label>
               Pick the type of challenge to be completed
               <select
                 onChange={this.handleChange}
                 name="category"
+                className="form-control"
               >
                 <option value="Food">Food</option>
                 <option value="Adventure">Adventure</option>
@@ -61,41 +62,52 @@ class createChallenge extends Component {
             </label>
           </div>
           <br></br>
-          <div>
+          <div className="form-group">
             <label>
               Name:
               <input
                 type="text"
                 name="name"
                 onChange={this.handleChange}
+                className="form-control"
               />
             </label>
           </div>
           <br></br>
-          <div>
+          <div className="form-group">
             <label>
               Description
               <textarea
                 name="description"
                 onChange={this.handleChange}
+                className="form-control"
               />
             </label>
           </div>
           <br></br>
-          <div>
+          <div className="form-group">
             <label>
               Likes Goal:
               <input
                 type="integer"
                 name="goal"
                 onChange={this.handleChange}
+                className="form-control"
               />
             </label>
           </div>
+
           <input
             type="submit"
             value="Submit"
             onSubmit={this.handleSubmit}
+            style={{
+              width: "150px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+
+              backgroundColor: "#223623",
+              color: "white",}}
           />
         </form>
       </div>
